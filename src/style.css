@@ -1,22 +1,9 @@
 @font-face {
-  font-family: better-grade;
-  src: url(./fonts/better-grade.ttf);
+  font-family: BetterGrade;
+  src: url(./fonts/BetterGrade.woff2);
 }
 
-.font-cursive {
-  font-family: better-grade;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-content-section {
-  padding: 0 12px 0 12px;
-  max-width: 1000px;
-  margin: auto;
-}
-
+/* Specific elements */
 .rose {
   z-index: -1;
   max-width: 660px;
@@ -32,6 +19,32 @@
   right: 0;
   transform: scaleX(-1);
 }
+#us-image {
+  max-width: 500px;
+  width: 100%;
+}
+
+footer {
+  margin-top: 200px;
+  margin-bottom: 8px;
+}
+
+/* Helpers */
+
+.font-cursive {
+  font-family: BetterGrade, cursive;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-content-section {
+  padding: 0 12px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .center-wrapper {
   display: flex;
@@ -39,8 +52,23 @@
   justify-content: center;
 }
 
-#us-image {
-  max-width: 500px;
-  width: 100%;
+.left-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.rounded-border {
   border-radius: 30px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.mr-2 {
+  margin-right: 12px;
 }
