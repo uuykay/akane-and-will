@@ -5,6 +5,7 @@ const getElement = (selector) => {
 const setTextContent = ({ selector, value }) => {
   const element = getElement(selector);
   element.textContent = value;
+  return element;
 };
 
 const createSemanticDate = ({ day, month, year }) => {
@@ -18,22 +19,18 @@ const setDaysToGo = () => {
 
   const daysUntil = Math.round((weddingDate - dateNow) / (24 * 60 * 60 * 1000));
 
+  const selector = "#days-to-go";
+  const element = getElement(selector);
+
+  // Change the value based on date calculation
   if (daysUntil > 0) {
-    setTextContent({
-      selector: "#days-to-go",
-      value: `${daysUntil} days to go!`,
-    });
+    element.textContent = `${daysUntil} days to go!`;
   } else if (daysUntil === 0) {
-    setTextContent({
-      selector: "#days-to-go",
-      value: `Today's the day!`,
-    });
-  } else {
-    setTextContent({
-      selector: "#days-to-go",
-      value: `Thank you for coming to our wedding.`,
-    });
+    element.textContent = `Today's the day!`;
   }
+
+  // Remove hidden class
+  element.classList.remove("invisible");
 };
 
 const init = () => {
