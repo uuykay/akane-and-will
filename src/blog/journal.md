@@ -49,3 +49,9 @@ Changing the dom so that only the first image would have a src but every other i
 And we can get:
 
 ![](2022-10-23-18-31-27.png)
+
+The carousel controls were also being loaded as 2 separate assets, event though visually they are just mirror images of one another.
+
+![](2022-10-23-18-44-48.png)
+
+![](2022-10-23-18-45-27.png)
