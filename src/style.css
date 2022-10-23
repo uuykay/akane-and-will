@@ -19,14 +19,17 @@
   right: 0;
   transform: scaleX(-1);
 }
-#us-image {
-  max-width: 500px;
-  width: 100%;
+.carousel-image {
+  max-height: 700px;
 }
 
 footer {
   margin-top: 200px;
   margin-bottom: 8px;
+}
+
+.carousel-control {
+  width: 40px;
 }
 
 /* Helpers */

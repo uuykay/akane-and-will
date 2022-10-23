@@ -31,3 +31,21 @@ Sometimes it would refuse to generate the fonts and sometimes I would just get w
 Managed to slim it from 72 to 16kb!
 
 ![](2022-10-22-19-34-04.png)
+
+## Carousel
+
+I wanted to add a carousel to display multiple images of us.
+
+![](2022-10-23-16-59-35.png)
+
+On load, all the images in the carousel would download to the browser even when marked as lazy.
+
+![](2022-10-23-16-59-40.png)
+
+Changing the dom so that only the first image would have a src but every other image would have a data-src, and then adding an event listener to when each slide was visible
+
+![](2022-10-23-18-30-28.png)
+
+And we can get:
+
+![](2022-10-23-18-31-27.png)

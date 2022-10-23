@@ -3,23 +3,25 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="./libs/glider/glider.min.css" />
+    <script src="./libs/glider/glider.min.js" async></script>
     <title>Akane and Will's Wedding</title>
   </head>
   <body>
+    <img
+      class="rose"
+      alt=""
+      id="rose-left"
+      src="./images/rose-clipped-min.jpg"
+    />
+    <img
+      class="rose"
+      alt=""
+      id="rose-right"
+      src="./images/rose-clipped-min.jpg"
+    />
     <section>
       <div class="text-center text-content-section">
-        <img
-          class="rose"
-          alt=""
-          id="rose-left"
-          src="./images/rose-clipped-min.jpg"
-        />
-        <img
-          class="rose"
-          alt=""
-          id="rose-right"
-          src="./images/rose-clipped-min.jpg"
-        />
         <h1 class="font-cursive">Akane and Will</h1>
         <p class="uppercase">26th November 2022 - Rumsey Rose Garden, 2150</p>
         <p class="uppercase">12-2pm</p>
@@ -30,13 +32,74 @@
       <div class="text-content-section">
         <h2>Our Story</h2>
         <p></p>
-        <div class="center-wrapper">
-          <img
-            id="us-image"
-            class="rounded-border"
-            alt="Will and Akane"
-            src="./images/will-and-akane.jpg"
-          />
+        <div class="glider-contain">
+          <div class="glider">
+            <section>
+              <div class="center-wrapper">
+                <img
+                  class="carousel-image rounded-border"
+                  loading="lazy"
+                  alt=""
+                  src="./images/will-and-akane.jpg"
+                />
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <img
+                  class="carousel-image rounded-border"
+                  loading="lazy"
+                  alt=""
+                  data-src="./images/IMG_20200801_124939.jpg"
+                />
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <img
+                  class="carousel-image rounded-border"
+                  loading="lazy"
+                  alt=""
+                  data-src="./images/IMG_20210613_120616_1.jpg"
+                />
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <img
+                  class="carousel-image rounded-border"
+                  loading="lazy"
+                  alt=""
+                  data-src="./images/IMG_20220715_165711.jpg"
+                />
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <img
+                  class="carousel-image rounded-border"
+                  loading="lazy"
+                  alt=""
+                  data-src="./images/IMG_20220717_124330.jpg"
+                />
+              </div>
+            </section>
+          </div>
+          <button aria-label="Previous" class="glider-prev">
+            <img
+              class="carousel-control"
+              alt="previous"
+              src="./icons/chevron-left.svg"
+            />
+          </button>
+          <button aria-label="Next" class="glider-next">
+            <img
+              class="carousel-control"
+              alt="next"
+              src="./icons/chevron-right.svg"
+            />
+          </button>
+          <div role="tablist" id="dots"></div>
         </div>
       </div>
       <div class="text-content-section">
@@ -79,6 +142,7 @@
         <h2>Reception</h2>
         <div class="center-wrapper">
           <img
+            loading="lazy"
             alt="Palace Chinese Restaurant"
             src="./images/palace-chinese-restaurant.png"
           />
@@ -111,6 +175,7 @@
     <footer class="text-content-section">
       <small>Handcrafted with love by Will</small>
     </footer>
+
     <script src="index.js" async></script>
   </body>
 </html>
