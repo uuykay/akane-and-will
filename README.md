@@ -9,3 +9,7 @@ https://www.fontspace.com/category/handwriting
 ## Glyphs to Paths converter
 
 https://znapi.github.io/svg-font-to-paths/
+
+## Tools
+
+https://imagecompressor.com/

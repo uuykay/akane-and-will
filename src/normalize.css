@@ -22,7 +22,8 @@ html {
 
 body {
   margin: 0;
-  font-family: Garmond, serif;
+  font-family: serif;
+  font-size: 24px;
 }
 
 /**
@@ -44,11 +45,17 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 39px;
 }
 
-p {
+p,
+a {
   font-size: 24px;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
 }
 
 /* Grouping content
@@ -63,16 +70,6 @@ hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
-}
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -107,23 +104,11 @@ strong {
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
  * Add the correct font size in all browsers.
  */
 
 small {
-  font-size: 80%;
+  font-size: 14px;
 }
 
 /**
@@ -133,7 +118,6 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
