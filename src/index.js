@@ -33,8 +33,54 @@ const setDaysToGo = () => {
   element.classList.remove("invisible");
 };
 
-const init = () => {
-  setDaysToGo();
+const carouselImageLoad = () => {
+  const glider = document.querySelector(".glider");
+  const images = glider.querySelectorAll("img[data-src]");
+  console.log(images);
+
+  if (images?.length === 0) {
+    console.log("selected but early exit");
+    glider.removeEventListener("glider-slide-visible", carouselImageLoad);
+    return;
+  }
+
+  for (let i = 0; i < 2; i++) {
+    const image = images?.[i];
+    console.log({ image });
+
+    if (!image) {
+      continue;
+    }
+
+    image.src = image.getAttribute("data-src");
+    image.removeAttribute("data-src");
+  }
 };
 
-init();
+const attachCaroselImageLoad = () => {
+  document
+    .querySelector(".glider")
+    .addEventListener("glider-slide-visible", carouselImageLoad);
+};
+
+const init = () => {
+  setDaysToGo();
+  // Relies on Glider being present
+  new Glider(document.querySelector(".glider"), {
+    slidesToShow: 1,
+    dots: "#dots",
+    draggable: true,
+    arrows: {
+      prev: ".glider-prev",
+      next: ".glider-next",
+    },
+  });
+
+  attachCaroselImageLoad();
+};
+
+try {
+  init();
+} catch (e) {
+  console.log(e);
+}

@@ -3,40 +3,146 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="./libs/glider/glider.min.css" />
+    <script src="./libs/glider/glider.min.js" async></script>
     <title>Akane and Will's Wedding</title>
   </head>
   <body>
+    <img
+      class="rose"
+      alt=""
+      id="rose-left"
+      src="./images/rose-clipped-min.jpg"
+    />
+    <img
+      class="rose invert"
+      alt=""
+      id="rose-right"
+      src="./images/rose-clipped-min.jpg"
+    />
     <section>
       <div class="text-center text-content-section">
-        <img
-          class="rose"
-          alt=""
-          id="rose-left"
-          src="./images/rose-clipped-min.jpg"
-        />
-        <img
-          class="rose"
-          alt=""
-          id="rose-right"
-          src="./images/rose-clipped-min.jpg"
-        />
         <h1 class="font-cursive">Akane and Will</h1>
-        <p class="uppercase">26th November 2022 - Rumsey Rose Garden, 2150</p>
-        <p class="uppercase">12-2pm</p>
-        <p id="days-to-go" class="invisible">
+        <p class="uppercase font-weight-bold">
+          26th November 2022 - Rumsey Rose Garden, 2150
+        </p>
+        <p class="uppercase font-weight-bold">12-2pm</p>
+        <p id="days-to-go" class="invisible font-weight-bold">
           Our special day is now but a fond memory.
         </p>
       </div>
       <div class="text-content-section">
         <h2>Our Story</h2>
         <p></p>
-        <div class="center-wrapper">
-          <img
-            id="us-image"
-            class="rounded-border"
-            alt="Will and Akane"
-            src="./images/will-and-akane.jpg"
-          />
+        <div class="glider-contain">
+          <div class="glider">
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    src="./images/will-and-akane.jpg"
+                  />
+                  <figcaption>Our first date - Hyde Park</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20200819_191357.jpg"
+                  />
+                  <figcaption>Our favourite bear</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20200801_152617.jpg"
+                  />
+                  <figcaption>Never letting you go</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20200905_123142.jpg"
+                  />
+                  <figcaption>Life's a beach</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20201031_122507.jpg"
+                  />
+                  <figcaption>Team Rocket blast off</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20201227_160807.jpg"
+                  />
+                  <figcaption>Two hearts as one</figcaption>
+                </figure>
+              </div>
+            </section>
+            <section>
+              <div class="center-wrapper">
+                <figure>
+                  <img
+                    class="carousel-image rounded-border"
+                    loading="lazy"
+                    alt=""
+                    data-src="./images/IMG_20210912_151611.jpg"
+                  />
+                  <figcaption>Sharing hobbies</figcaption>
+                </figure>
+              </div>
+            </section>
+          </div>
+          <button aria-label="Previous" class="glider-prev">
+            <img
+              class="carousel-control"
+              alt="previous"
+              src="./icons/chevron-left.svg"
+            />
+          </button>
+          <button aria-label="Next" class="glider-next">
+            <img
+              class="carousel-control invert"
+              alt="next"
+              src="./icons/chevron-left.svg"
+            />
+          </button>
+          <div role="tablist" id="dots"></div>
         </div>
       </div>
       <div class="text-content-section">
@@ -49,12 +155,8 @@
           />
         </div>
         <p>
-          The wedding ceremony is being held at the
-          <a
-            target="_blank"
-            href="https://www.google.com.au/maps/place/Rumsey+Rose+Garden/@-33.814451,150.9976884,19z/data=!4m5!3m4!1s0x6b12a2e0850dda3b:0xc503714b169d214d!8m2!3d-33.8142438!4d150.9974148"
-            >Rumsey Rose Garden</a
-          >, within Parramatta Park.
+          The wedding ceremony is being held at the Rumsey Rose Garden, within
+          Parramatta Park.
         </p>
         <p>
           We recommend entering the park from the
@@ -65,6 +167,15 @@
           >
           where the Rumsey Rose Garden is close by.
         </p>
+        <p>
+          <strong>Address: </strong
+          ><a
+            target="_blank"
+            href="https://www.google.com.au/maps/place/Rumsey+Rose+Garden/@-33.814451,150.9976884,19z/data=!4m5!3m4!1s0x6b12a2e0850dda3b:0xc503714b169d214d!8m2!3d-33.8142438!4d150.9974148"
+            >Rumsey Rose Garden</a
+          >
+        </p>
+        <p><strong>Commencing:</strong> 12:00pm</p>
         <p class="left-wrapper">
           <span aria-hidden="true" class="mr-2">🚗</span>Parking is available
           adjacent to the rose garden, as well as along Railway Parade.
@@ -79,6 +190,7 @@
         <h2>Reception</h2>
         <div class="center-wrapper">
           <img
+            loading="lazy"
             alt="Palace Chinese Restaurant"
             src="./images/palace-chinese-restaurant.png"
           />

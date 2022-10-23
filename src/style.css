@@ -3,30 +3,37 @@
   src: url(./fonts/BetterGrade.woff2);
 }
 
+@font-face {
+  font-family: GaramondRegular;
+  src: url(./fonts/GaramondRegular.woff2);
+}
+
 /* Specific elements */
 .rose {
   z-index: -1;
   max-width: 660px;
   width: 50%;
   position: absolute;
+  top: 0;
 }
 #rose-left {
-  top: 0;
   left: 0;
 }
 #rose-right {
-  top: 0;
   right: 0;
-  transform: scaleX(-1);
 }
-#us-image {
-  max-width: 500px;
-  width: 100%;
+
+.carousel-image {
+  max-height: 700px;
 }
 
 footer {
   margin-top: 200px;
   margin-bottom: 8px;
+}
+
+.carousel-control {
+  width: 40px;
 }
 
 /* Helpers */
@@ -71,4 +78,23 @@ footer {
 
 .mr-2 {
   margin-right: 12px;
+}
+
+.invert {
+  transform: scaleX(-1);
+}
+
+img[data-src] {
+  height: 700px;
+  width: 532px;
+  background: lightgrey;
+  border: 1px solid gray;
+}
+
+body {
+  font-family: GaramondRegular;
+}
+
+.font-weight-bold {
+  font-weight: bold;
 }
