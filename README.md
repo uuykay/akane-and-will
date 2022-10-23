@@ -1,5 +1,7 @@
 # Akane & Will's Wedding Website
 
+A website to share about our special day.
+
 ## Asset Credits
 
 https://www.vecteezy.com/
