@@ -63,7 +63,22 @@ const attachCaroselImageLoad = () => {
     .addEventListener("glider-slide-visible", carouselImageLoad);
 };
 
+const inviteGuest = ({ name }) => {
+  if (!name) {
+    return;
+  }
+
+  const value = `Invite ${name} to our wedding`;
+
+  console.log({ name });
+
+  value && setTextContent({ selector: "#invitation", value });
+};
+
 const init = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get("invitation");
+
   setDaysToGo();
   // Relies on Glider being present
   new Glider(document.querySelector(".glider"), {
@@ -77,6 +92,7 @@ const init = () => {
   });
 
   attachCaroselImageLoad();
+  inviteGuest({ name });
 };
 
 try {
