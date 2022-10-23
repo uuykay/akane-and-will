@@ -3,6 +3,11 @@
   src: url(./fonts/BetterGrade.woff2);
 }
 
+@font-face {
+  font-family: GaramondRegular;
+  src: url(./fonts/GaramondRegular.woff2);
+}
+
 /* Specific elements */
 .rose {
   z-index: -1;
@@ -84,4 +89,12 @@ img[data-src] {
   width: 532px;
   background: lightgrey;
   border: 1px solid gray;
+}
+
+body {
+  font-family: GaramondRegular;
+}
+
+.font-weight-bold {
+  font-weight: bold;
 }
