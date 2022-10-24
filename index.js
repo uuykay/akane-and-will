@@ -36,17 +36,9 @@ const setDaysToGo = () => {
 const carouselImageLoad = () => {
   const glider = document.querySelector(".glider");
   const images = glider.querySelectorAll("img[data-src]");
-  console.log(images);
 
-  if (images?.length === 0) {
-    console.log("selected but early exit");
-    glider.removeEventListener("glider-slide-visible", carouselImageLoad);
-    return;
-  }
-
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < images.length; i++) {
     const image = images?.[i];
-    console.log({ image });
 
     if (!image) {
       continue;
@@ -57,18 +49,12 @@ const carouselImageLoad = () => {
   }
 };
 
-const attachCaroselImageLoad = () => {
-  document
-    .querySelector(".glider")
-    .addEventListener("glider-slide-visible", carouselImageLoad);
-};
-
 const inviteGuest = ({ name }) => {
   if (!name) {
     return;
   }
 
-  const value = `Invite ${name} to our wedding`;
+  const value = `Invite you, ${name}, to our wedding`;
 
   console.log({ name });
 
@@ -91,7 +77,10 @@ const init = () => {
     },
   });
 
-  attachCaroselImageLoad();
+  // attachCaroselImageLoad();
+
+  setTimeout(carouselImageLoad, 1000);
+
   inviteGuest({ name });
 };
 
