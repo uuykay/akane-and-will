@@ -45,13 +45,14 @@ footer {
 }
 
 .svg-path {
-  stroke-dasharray: 20000;
-  stroke-dashoffset: 20000;
-  animation: dash 6s linear forwards;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: dash 7s linear forwards;
   fill-opacity: 0;
-  stroke: red;
-  stroke-width: 20;
-  fill: red;
+  stroke: black;
+  stroke-width: 0.15;
+  fill: black;
+  transform: scale(5.5);
 }
 
 /* Helpers */

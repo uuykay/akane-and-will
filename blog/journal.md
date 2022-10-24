@@ -55,3 +55,15 @@ The carousel controls were also being loaded as 2 separate assets, event though 
 ![](2022-10-23-18-44-48.png)
 
 ![](2022-10-23-18-45-27.png)
+
+## Animating title
+
+![](2022-10-24-20-34-13.png)
+
+![](2022-10-24-20-34-23.png)
+
+https://css-tricks.com/svg-line-animation-works/
+![](2022-10-24-20-34-45.png)
+
+
+![](2022-10-24-20-36-13.png)
