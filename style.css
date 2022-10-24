@@ -1,11 +1,13 @@
 @font-face {
   font-family: BetterGrade;
   src: url(./fonts/BetterGrade.woff2);
+  font-display: swap;
 }
 
 @font-face {
   font-family: GaramondRegular;
   src: url(./fonts/GaramondRegular.woff2);
+  font-display: swap;
 }
 
 /* Specific elements */
@@ -93,7 +95,7 @@ img[data-src] {
 }
 
 body {
-  font-family: GaramondRegular;
+  font-family: GaramondRegular, serif;
 }
 
 .font-weight-bold {
