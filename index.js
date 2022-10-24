@@ -68,7 +68,7 @@ const inviteGuest = ({ name }) => {
     return;
   }
 
-  const value = `Invite ${name} to our wedding`;
+  const value = `Invite you, ${name}, to our wedding`;
 
   console.log({ name });
 
