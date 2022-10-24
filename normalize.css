@@ -38,7 +38,8 @@ main {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+h1,
+.h1 {
   font-size: 100px;
   margin: 80px 0 0 0;
 }

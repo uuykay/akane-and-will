@@ -37,6 +37,23 @@ footer {
   width: 40px;
 }
 
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
+
+.svg-path {
+  stroke-dasharray: 20000;
+  stroke-dashoffset: 20000;
+  animation: dash 6s linear forwards;
+  fill-opacity: 0;
+  stroke: red;
+  stroke-width: 20;
+  fill: red;
+}
+
 /* Helpers */
 
 .font-cursive {
