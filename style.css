@@ -44,6 +44,10 @@ footer {
   }
 }
 
+#svg-group {
+  transform: scale(5) translateX(62px);
+}
+
 .svg-path {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
@@ -52,7 +56,6 @@ footer {
   stroke: black;
   stroke-width: 0.15;
   fill: black;
-  transform: scale(5.5);
 }
 
 /* Helpers */
