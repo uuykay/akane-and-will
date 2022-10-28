@@ -1,16 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
+const contentJsonProcessor = ({ type, content, props }) => {
+  switch (type) {
+    case "p":
+      return `<p>${content}</p>`;
+    case "a":
+      const { target, href } = props;
+      return `<a target="${target}" href="${href}">${content}</a>`;
+
+    default:
+      return `${content}`;
+  }
+};
+
+const contentJsonArrayProcessor = (contentJsonArray) => {
+  return contentJsonArray
+    .map((contentJson) => {
+      if (Array.isArray(contentJson.content)) {
+        return contentJsonArrayProcessor(contentJson.content);
+      }
+      return contentJsonProcessor(contentJson);
+    })
+    .join("");
+};
+
+const createTemplate = ({
+  lang,
+  title,
+  metaDescription,
+  h1,
+  location,
+  daysToGoDefault,
+  ourStory,
+  ourFirstDateCaption,
+  sharingHobbiesCaption,
+  ourFavouriteBearCaption,
+  beachCaption,
+  teamRocketCaption,
+  handHoldingCaption,
+  shadowHeartsCaption,
+  ceremonyLocationTitle,
+  ceremonyLocationContent,
+  parkingDetails,
+  trainDetails,
+  receptionTitle,
+  receptionContent,
+  address,
+  commencing,
+  rsvpTitle,
+  rsvpContent,
+  footer,
+}) => {
+  return /*html*/ `<!DOCTYPE html>
+<html lang="${lang}">
   <head>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico?" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="./libs/glider/glider.min.css" />
-    <title>Akane and Will's Wedding</title>
+    <title>${title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <meta
       name="description"
-      content="Akane and Will invite you to share in our special day."
+      content="${metaDescription}"
     />
   </head>
   <body>
@@ -28,16 +79,16 @@
     />
     <section>
       <div class="text-center text-content-section">
-        <h1 class="font-cursive">Akane and Will</h1>
+        <h1 class="font-cursive">${h1}</h1>
         <div id="invitation">&nbsp;</div>
         <p class="uppercase font-weight-bold">
-          26th November 2022 - Rumsey Rose Garden, 2150
+          ${location}
         </p>
         <p class="uppercase font-weight-bold">12-2pm</p>
-        <p id="days-to-go" class="invisible font-weight-bold">Our special day is now but a fond memory.</p>
+        <p id="days-to-go" class="invisible font-weight-bold">${daysToGoDefault}</p>
       </div>
       <div class="text-content-section">
-        <h2>Our Story</h2>
+        <h2>${ourStory}</h2>
         <p></p>
         <div class="glider-contain">
           <div class="glider">
@@ -52,7 +103,7 @@
                     width="797"
                     height="1049"
                   />
-                  <figcaption>Our first date - Hyde Park</figcaption>
+                  <figcaption>${ourFirstDateCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -65,7 +116,7 @@
                     alt=""
                     data-src="./images/IMG_20210912_151611.jpg"
                   />
-                  <figcaption>Sharing hobbies</figcaption>
+                  <figcaption>${sharingHobbiesCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -78,7 +129,7 @@
                     alt=""
                     data-src="./images/IMG_20200819_191357.jpg"
                   />
-                  <figcaption>Our favourite bear</figcaption>
+                  <figcaption>${ourFavouriteBearCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -91,7 +142,7 @@
                     alt=""
                     data-src="./images/IMG_20200905_123142.jpg"
                   />
-                  <figcaption>Life's a beach</figcaption>
+                  <figcaption>${beachCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -104,7 +155,7 @@
                     alt=""
                     data-src="./images/IMG_20201031_122507.jpg"
                   />
-                  <figcaption>Being silly together</figcaption>
+                  <figcaption>${teamRocketCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -117,7 +168,7 @@
                     alt=""
                     data-src="./images/IMG_20200801_152617.jpg"
                   />
-                  <figcaption>Never letting you go</figcaption>
+                  <figcaption>${handHoldingCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -130,7 +181,7 @@
                     alt=""
                     data-src="./images/IMG_20201227_160807.jpg"
                   />
-                  <figcaption>Two hearts as one</figcaption>
+                  <figcaption>${shadowHeartsCaption}</figcaption>
                 </figure>
               </div>
             </section>
@@ -153,7 +204,7 @@
         </div>
       </div>
       <div class="text-content-section">
-        <h2>Ceremony Location</h2>
+        <h2>${ceremonyLocationTitle}</h2>
         <div class="center-wrapper">
           <img
             width="700"
@@ -163,24 +214,24 @@
             src="./images/ceremony-location.jpg"
           />
         </div>
-					<p>The wedding ceremony is being held at the Rumsey Rose Garden, within Parramatta Park.</p>We recommend entering the park from the <a target="_blank" href="https://www.google.com/maps/place/33%C2%B048'50.4%22S+150%C2%B059'52.6%22E/@-33.813991,150.9973905,19z/data=!3m1!4b1!4m6!3m5!1s0x0:0x468f5f88d0d0ee04!7e2!8m2!3d-33.8139908!4d150.9979392">corner of Pitt St and Macquarie St, Parramatta</a> where the Rumsey Rose Garden is close by.
+					${contentJsonArrayProcessor(ceremonyLocationContent)}
         <p>
-          <strong>Address: </strong
+          <strong>${address}: </strong
           ><a
             target="_blank"
             href="https://www.google.com.au/maps/place/Rumsey+Rose+Garden/@-33.814451,150.9976884,19z/data=!4m5!3m4!1s0x6b12a2e0850dda3b:0xc503714b169d214d!8m2!3d-33.8142438!4d150.9974148"
             >Rumsey Rose Garden</a
           >
         </p>
-        <p><strong>Commencing:</strong> 12:00pm</p>
+        <p><strong>${commencing}:</strong> 12:00pm</p>
         <p class="left-wrapper">
-          <span aria-hidden="true" class="mr-2">🚗</span>Parking is available adjacent to the rose garden, as well as along Railway Parade.
+          <span aria-hidden="true" class="mr-2">🚗</span>${parkingDetails}
         </p>
         <p class="left-wrapper">
-          <span aria-hidden="true" class="mr-2">🚃</span>The location is easily accessible by public transport, located 10 minutes by walk from Parramatta train station.</p>
+          <span aria-hidden="true" class="mr-2">🚃</span>${trainDetails}</p>
       </div>
       <div class="text-content-section">
-        <h2>Reception</h2>
+        <h2>${receptionTitle}</h2>
         <div class="center-wrapper">
           <img
             class="mw-100"
@@ -189,9 +240,9 @@
             src="./images/palace-chinese-restaurant.png"
           />
         </div>
-        <p>Following the ceremony, we would love to have our guests join us at the Palace Chinese Restaurant for the reception dinner.</p><p>If you have any dietary preferences or restrictions please let us know when RSVP'ing so we can accommodate.</p>
+        ${contentJsonArrayProcessor(receptionContent)}
         <p>
-          <strong>Address: </strong
+          <strong>${address}: </strong
           ><a
             target="_blank"
             href="https://www.google.com/maps/place/Palace+Chinese+Restaurant/@-33.8719036,151.2068077,17z/data=!3m2!4b1!5s0x6b12ae42db355f4f:0x6151d5291f9cee0c!4m5!3m4!1s0x6b12ae3e36c3ade5:0x37c8c02601d56fd3!8m2!3d-33.8719036!4d151.2090017"
@@ -199,17 +250,22 @@
             NSW 2000</a
           >
         </p>
-        <p><strong>Commencing:</strong> 6:30pm</p>
+        <p><strong>${commencing}:</strong> 6:30pm</p>
       </div>
       <div class="text-content-section">
-        <h2>RSVP</h2>
-        <p>Please reach out to Will or Akane to let us know if you can join us for our special day. In order to plan for our day, we kindly request that you let us know to add you to the guest list by 1st November 2022.</p>
+        <h2>${rsvpTitle}</h2>
+        <p>${rsvpContent}</p>
       </div>
     </section>
     <footer class="text-content-section">
-      <small>Handcrafted with love by Will</small>
+      <small>${footer}</small>
     </footer>
     <script src="./libs/glider/glider.min.js"></script>
     <script src="index.js"></script>
   </body>
-</html>
+</html>`;
+};
+
+module.exports = {
+  createTemplate,
+};

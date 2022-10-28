@@ -13,6 +13,18 @@ const createSemanticDate = ({ day, month, year }) => {
   return new Date(year, month - 1, day);
 };
 
+const languageContentSwitch = ({ en, zh, ja }) => {
+  const language = getElement("html").getAttribute("lang");
+
+  if (language.startsWith("zh")) {
+    return zh;
+  } else if (language.startsWith("ja")) {
+    return ja;
+  }
+
+  return en;
+};
+
 const setDaysToGo = () => {
   const dateNow = new Date();
   const weddingDate = createSemanticDate({ day: 26, month: 11, year: 2022 });
@@ -22,11 +34,21 @@ const setDaysToGo = () => {
   const selector = "#days-to-go";
   const element = getElement(selector);
 
+  const language = getElement("html").getAttribute("lang");
+
   // Change the value based on date calculation
   if (daysUntil > 0) {
-    element.textContent = `${daysUntil} days to go!`;
+    element.textContent = languageContentSwitch({
+      en: `${daysUntil} days to go!`,
+      zh: `还有${daysUntil}天！`,
+      ja: `あと${daysUntil}日！`,
+    });
   } else if (daysUntil === 0) {
-    element.textContent = `Today's the day!`;
+    element.textContent = languageContentSwitch({
+      en: `Today's the day!`,
+      zh: `今天的日子！`,
+      ja: `今日がその日です！`,
+    });
   }
 
   // Remove hidden class
