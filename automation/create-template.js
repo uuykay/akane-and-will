@@ -49,11 +49,13 @@ const createTemplate = ({
   rsvpContent,
   footer,
 }) => {
+  const time = new Date().getTime();
+
   return /*html*/ `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico?" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?${time}" />
     <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="./libs/glider/glider.min.css" />
     <title>${title}</title>
@@ -261,7 +263,7 @@ const createTemplate = ({
       <small>${footer}</small>
     </footer>
     <script src="./libs/glider/glider.min.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js?${time}"></script>
   </body>
 </html>`;
 };
