@@ -76,7 +76,11 @@ const inviteGuest = ({ name }) => {
     return;
   }
 
-  const value = `Invite you, ${name}, to our wedding`;
+  const value = languageContentSwitch({
+    en: `Invite you, ${name}, to our wedding`,
+    zh: `邀请你，${name}，参加我们的婚礼`,
+    ja: `${name}さんを私たちの結婚式にご招待`,
+  });
 
   console.log({ name });
 
