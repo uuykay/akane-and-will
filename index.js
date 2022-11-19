@@ -34,8 +34,6 @@ const setDaysToGo = () => {
   const selector = "#days-to-go";
   const element = getElement(selector);
 
-  const language = getElement("html").getAttribute("lang");
-
   // Change the value based on date calculation
   if (daysUntil > 0) {
     element.textContent = languageContentSwitch({
@@ -102,8 +100,6 @@ const init = () => {
       next: ".glider-next",
     },
   });
-
-  // attachCaroselImageLoad();
 
   setTimeout(carouselImageLoad, 1000);
 

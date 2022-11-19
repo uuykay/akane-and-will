@@ -91,7 +91,6 @@ const createTemplate = ({
       </div>
       <div class="text-content-section">
         <h2>${ourStory}</h2>
-        <p></p>
         <div class="glider-contain">
           <div class="glider">
             <section>
